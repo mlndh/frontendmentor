@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        color: white;
+        font-family: "Inter";
+        background-color: hsl(230, 17%, 14%);
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-top: 45px;
+      }
+      .overview {
+        background-color: hsl(228, 28%, 20%);
+        padding: 30px;
+        margin-bottom: 20px;
+        /*  flex-basis: 100%; */
+        width: 200px;
+        /* height: 50px; */
+      }
+      .overview:hover {
+        background-color: hsl(228, 12%, 44%);
+      }
+      .container:hover {
+        background-color: hsl(228, 12%, 44%);
+      }
+      .categories {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .container {
+        border: solid black 1px;
+        color: white;
+        width: 150px;
+        background-color: hsl(228, 28%, 20%);
+      }
+      .dark-mode * {
+        color: black;
+        background-color: hsl(0, 0%, 100%);
+      }
+      .dark-mode .container {
+        color: hsl(228, 12%, 44%);
+        background-color: hsl(227, 47%, 96%);
+      }
+      .dark-mode .container * {
+        color: black;
+        background-color: hsl(227, 47%, 96%);
+      }
+      .dark-mode .overview {
+        color: hsl(228, 12%, 44%);
+        background-color: hsl(227, 47%, 96%);
+      }
+
+      .dark-mode h2 {
+        color: hsl(228, 12%, 44%);
+      }
+      .dark-mode p {
+        background-color: hsl(227, 47%, 96%);
+      }
+      /* .darkmode .overview:hover {
+        background-color: red;
+      }
+      .darkmode .container:hover {
+        background-color: red;
+      } */
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      main {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      h2 {
+        margin-left: 50px;
+      }
+      aside {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      section {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+        margin-right: 100px;
+      }
+      h1 {
+        order: 1;
+        padding-top: 0px;
+      }
+      #facebook-container {
+        border-top: solid hsl(195, 100%, 50%) 3px;
+        padding: 50px;
+      }
+      #twitter-container {
+        border-top: solid hsl(203, 89%, 53%) 3px;
+        padding: 50px;
+      }
+      #main-box {
+        /* padding: 50px; */
+        flex-direction: column;
+        width: 240px;
+      }
+      #instagramP {
+        padding: 50px;
+      }
+      #instagram-container {
+        height: 3px;
+        width: 100%;
+        background-image: linear-gradient(
+          to left,
+          hsl(37, 97%, 70%),
+          hsl(329, 70%, 58%)
+        );
+      }
+      #youtube-container {
+        border-top: solid hsl(348, 97%, 39%) 3px;
+        padding: 50px;
+      }
+      h3 {
+        font-size: 25px;
+      }
+      .up {
+        color: hsl(163, 72%, 41%);
+      }
+      .down {
+        color: hsl(356, 69%, 56%);
+      }
+      /* SWITCHER TOGGLE  */
+      .switch2 {
+        order: 3;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      .patriks-låda {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+      }
+      p {
+        order: 2;
+      }
+      .under {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      /*  */
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: hsl(230, 17%, 14%);
+          padding: 0px;
+        }
+        header {
+          display: flex;
+          margin: 0px;
+        }
+        h1 {
+          font-size: 25px;
+        }
+        main {
+          display: flex;
+          flex-direction: column;
+        }
+        .container {
+          text-align: center;
+          width: 80%;
+          font-size: 20px;
+        }
+        #main-box {
+          width: 100%;
+        }
+        section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .overview {
+          width: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="body">
+      <header>
+        <div class="switch2">
+          Dark Mode
+          <label class="switch">
+            <input type="checkbox" onclick="darkMode()" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <!-- <button onclick="darkMode()">
+        <div id="round"> patrik</div>
+      </button> -->
+        <div class="patriks-låda">
+          <h1>Social Media Dashboard</h1>
+          <p>Total Followers: 23,004</p>
+        </div>
+      </header>
+      <main>
+        <div class="container" id="facebook-container">
+          <img src="images/icon-facebook.svg" />
+          @nathanf <br />
+          <h1>1987</h1>
+          Followers
+          <p class="up"><img src="images/icon-up.svg" /> 12 Today</p>
+        </div>
+
+        <div class="container" id="twitter-container">
+          <img src="images/icon-twitter.svg" />
+
+          @nathanf
+          <h1>1044</h1>
+          Followers
+          <p class="up"><img src="images/icon-up.svg" /> 99 Today</p>
+        </div>
+        <div class="container" id="main-box">
+          <div id="instagram-container"></div>
+
+          <div id="instagramP">
+            <img src="images/icon-instagram.svg" />
+
+            @realnathanf
+            <h1>11k</h1>
+            Followers
+            <p class="up"><img src="images/icon-up.svg" /> 1099 Today</p>
+          </div>
+        </div>
+
+        <div class="container" id="youtube-container">
+          <img src="images/icon-youtube.svg" />
+
+          Nathan F.
+          <h1>8239</h1>
+          Subscribers
+          <p class="down"><img src="images/icon-down.svg" /> 144 Today</p>
+        </div>
+      </main>
+
+      <h2>Overview - Today</h2>
+
+      <section>
+        <div class="overview" id="views-facebook">
+          <p class="categories">
+            Page Views
+            <img src="images/icon-facebook.svg" />
+          </p>
+          <div class="under">
+            <h3>87</h3>
+
+            <p class="up"><img src="images/icon-up.svg" /> 3%</p>
+          </div>
+        </div>
+
+        <div class="overview" id="likes-facebook">
+          <p class="categories">Likes <img src="images/icon-facebook.svg" /></p>
+          <div class="under">
+            <h3>52</h3>
+            <p class="down"><img src="images/icon-down.svg" /> 2%</p>
+          </div>
+        </div>
+
+        <div class="overview" id="likes-instagram">
+          <p class="categories">
+            Likes <img src="images/icon-instagram.svg" />
+          </p>
+          <div class="under">
+            <h3>5462</h3>
+            <p class="up"><img src="images/icon-up.svg" /> 2257%</p>
+          </div>
+        </div>
+
+        <div class="overview" id="views-instagram">
+          <p class="categories">
+            Profile Views <img src="images/icon-instagram.svg" />
+          </p>
+          <div class="under">
+            <h3>52k</h3>
+            <p class="up"><img src="images/icon-up.svg" /> 1375%</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="overview" id="retweets">
+          <p class="categories">
+            Retweets <img src="images/icon-twitter.svg" />
+          </p>
+          <div class="under">
+            <h3>117</h3>
+            <p class="up"><img src="images/icon-up.svg" /> 303%</p>
+          </div>
+        </div>
+
+        <div class="overview" id="likes-twitter">
+          <p class="categories">Likes <img src="images/icon-twitter.svg" /></p>
+          <div class="under">
+            <h3>507</h3>
+            <p class="up"><img src="images/icon-up.svg" /> 553%</p>
+          </div>
+        </div>
+
+        <div class="overview" id="likes-youtube">
+          <p class="categories">Likes <img src="images/icon-youtube.svg" /></p>
+          <div class="under">
+            <h3>107</h3>
+            <p class="down"><img src="images/icon-down.svg" /> 19%</p>
+          </div>
+        </div>
+
+        <div class="overview" id="views-youtube">
+          <p class="categories">
+            Total Views <img src="images/icon-youtube.svg" />
+          </p>
+          <div class="under">
+            <h3>1407</h3>
+            <p class="down"><img src="images/icon-down.svg" /> 12%</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>
+    <script>
+      function darkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        // var cont = document.querySelectorAll(".container");
+
+        // let cont = document.getElementsByClassName("container");
+        // for(i = 0; i < cont.length; i++) {
+        // cont[i].classList.toggle("dark-mode");
+        // console.log("funkar")
+        // }
+      }
+    </script>
+  </body>
+</html>
