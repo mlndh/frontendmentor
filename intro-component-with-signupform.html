@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        background-color: hsl(0, 100%, 74%);
+        font-family: "Poppins";
+        font-size: 16px;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      aside {
+        border: solid hsl(248, 32%, 49%);
+        background-color: hsl(248, 32%, 49%);
+        color: white;
+        border-radius: 5px;
+      }
+      section {
+        border: solid white;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      h1 {
+        color: white;
+        font-size: 16px;
+      }
+      p {
+        color: white;
+        font-size: 12px;
+      }
+      .condition-text {
+        color: grey;
+        font-size: 10px;
+      }
+      input {
+        border-style: double;
+        border-color: lightgrey;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 3px;
+        font-family: "Poppins";
+      }
+      input[type="submit"] {
+        background-color: hsl(154, 59%, 51%);
+        border-radius: 5px;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-transform: uppercase;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      h1 {
+      }
+      aside {
+        align-self: center;
+        text-align: center;
+        padding: 10px;
+      }
+
+      @media screen and (min-width: 600px) {
+        body {
+          display: flex;
+          padding: 10%;
+        }
+        aside {
+        display: flex;
+        }
+        section {
+
+        display: flex;
+        font-size: 80%;
+        }
+      
+        h1 {
+        font-size: 40px;
+          margin-right: 5%;
+        }
+        p {
+        font-size: 30px;
+        margin-right: 5%;
+        }
+             form {
+      height: 50vh; }
+      main {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+  }
+input {
+  font-size:20px;
+}
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Learn to code by watching others<br /></h1>
+      <p>
+        See how experienced developers solve problems in real-time. Watching
+        scripted tutorials is great, but understanding how developers think is
+        invaluable.<br />
+      </p>
+    </header>
+    <main> 
+    <aside>
+      Try it free 7 days then $20/mo. thereafter
+    </aside>
+    <br />
+    <section>
+      <form class="kontakt-form" id="ändras">
+        <input
+          type="text"
+          id="firstname"
+          name="fname"
+          required
+          placeholder="First Name"
+        /><br />
+        <input
+          type="text"
+          id="lastname"
+          name="lname"
+          required
+          placeholder="Last Name"
+        /><br />
+        <input
+          type="email"
+          id="email"
+          name="mail"
+          required
+          placeholder="Email Adress"
+        /><br />
+        <input
+          type="password"
+          id="pswrd"
+          name="pswrd"
+          required
+          placeholder="Password"
+        />
+        <input type="submit" id="submit" value="Claim your free trial" />
+        <br>
+        <span id="changing"> </span>
+        <p class="condition-text">
+          By clicking the button, you are agreeing to our <a href="#">Terms and Services</p></a>
+        </p>
+      </form>
+      
+      <br />
+      
+    </section>
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer>
+    </main>
+  </body>
+  <script>
+
+  var skicka = document.querySelector("#submit")
+  var ändras = document.querySelector("#ändras")
+  let errormessage = document.querySelector("#changing")
+  skicka.addEventListener("click", function () {
+    var uppgifter = document.querySelector("#firstname").value
+    var uppgifter = document.querySelector("#lastname").value
+    var uppgifter = document.querySelector("#email").value
+    var uppgifter = document.querySelector("#pswrd").value
+    
+    var felfält = document.querySelector("#felfält")
+    event.preventDefault();
+    var uppgifterMejl = document.querySelector("#email").value
+
+    if (uppgifter === "") {
+      // alert("Du behöver fylla i fälten markerade med *")
+      errormessage.innerHTML = "There seem to be something wrong in the form"
+      errormessage.style.color = "red"
+      event.preventDefault();
+    }
+    else if (uppgifterMejl.indexOf('@') < 0) {
+    errormessage.innerHTML = "The e-mail must include a @"
+    errormessage.style.color = "red"
+    }
+    else {
+      ändras.innerHTML = ("Vi hör av oss")
+      ändras.style.color = "green"
+      event.preventDefault();
+    }
+  });
+
+
+  </script>
+</html>
