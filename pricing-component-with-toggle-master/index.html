@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <style>
+body {
+  padding: 5%;
+  text-align: center;
+  font-family: 'Montserrat';
+  background-color: hsl(240, 20%, 89%);
+}
+header {
+display: flex;
+flex-direction: column;
+ }
+ .header-h1 {
+font-size: 30px;
+flex-direction: row;
+ }
+.header-p {
+font-size: 15px;
+align-content: space-around;
+ }
+
+main {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.blue-bg {
+background-color: hsl(236, 72%, 79%);
+color: white;
+}
+.white-bg {
+background-color: rgb(255, 255, 255);
+color: black;
+}
+.div-size {
+width: 80%;
+height: 50vh;
+padding: 5%;
+border-radius: 5%;
+margin-bottom: 10%;
+}
+.div-h1 {
+font-size: 60px;
+margin: 0;
+}
+.div-p {
+font-size: 20px;
+flex-direction: column;
+}
+
+button {
+  border: none;
+  border-radius: 6%;
+  padding: 5%;
+  width: 90%;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,0);
+}
+span {
+  font-size: 40px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/*.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}*/
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(236, 72%, 79%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(236, 72%, 79%);
+}
+
+/*input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}*/
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+label {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.higher {
+  display: none;
+  font-size: 60px;
+}
+#basic {
+  font-size: 60px;
+}
+#basic2 {
+  font-size: 60px;
+}
+#basic3 {
+  font-size: 60px;
+}
+@media screen and (min-width: 992px) {
+  body {
+padding: 0;
+  }
+main {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.div-size {
+width: 20%;
+height: 50vh;
+padding: 5%;
+border-radius: 5%;
+margin: 1%;
+}
+#larger-in-desk {
+height: 60vh;
+}
+
+}
+
+
+</style>
+</head>
+<body>
+<header> 
+ <h1 class="header-h1">  Our Pricing</h1>
+ <p class="header-p">  Annually <label class="switch">
+  <input type="checkbox" checked id="toggle">
+  <span class="slider round"></span>
+</label>Monthly</p>
+</header>
+<main> 
+<div class="white-bg div-size"> 
+  Basic
+  <h1 class="div-h1" id="test"><span>&dollar;</span>19.99</h1><h1 class="higher" id="basic"><span>&dollar;</span>199.99
+</h1>
+  <p class="div-p"> 500 GB Storage</p>
+  <p class="div-p">2 Users Allowed</p> 
+  <p class="div-p">Send up to 3 GB</p> 
+  <p class="div-p"><button class="div-btns blue-bg"> Learn more </button></p>
+</div>
+<div class="blue-bg div-size" id="larger-in-desk"> 
+  Professional
+  <h1 class="div-h1"  id="test2"><span>&dollar;</span>24.99
+  </h1><h1 class="higher" id="basic2"><span>&dollar;</span>249.99
+  </h1>
+  <p class="div-p">1 TB Storage<br> </p>
+    <p class="div-p">  5 Users Allowed<br> </p>
+      <p class="div-p"> Send up to 10 GB<br> </p>
+        <p class="div-p"> <button class="div-btns> white-bg"> Learn more </button></p>
+</div>
+<div class="white-bg div-size"> 
+  Master
+ <h1 class="div-h1" id="test3"> <span>&dollar;</span>39.99
+ </h1>
+ <h1 class="higher" id="basic3"><span>&dollar;</span>399.99
+ </h1>
+  <p class="div-p">2 TB Storage<br> </p>
+    <p class="div-p"> 10 Users Allowed<br> </p>
+      <p class="div-p"> Send up to 20 GB<br> </p>
+        <p class="div-p"> <button class="div-btn blue-bg"> Learn more </button></p>
+</div>
+</main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/mlndh">Malin DH</a>.
+  </div>
+
+  <script>
+
+    let togg = document.getElementById("toggle").onclick = function() {upgradePrice()}
+    function upgradePrice() {
+      
+    let basic = document.getElementById("basic");
+    let basic2 = document.getElementById("basic2")
+    let basic3 = document.getElementById("basic3")
+    let higher =  document.getElementById("test");
+    let higher3 =  document.getElementById("test3");
+    let higher2 =  document.getElementById("test2");
+    basic.classList.toggle("higher");
+    basic3.classList.toggle("higher");
+    basic2.classList.toggle("higher");
+    higher.classList.toggle("higher");
+    higher2.classList.toggle("higher");
+    higher3.classList.toggle("higher");
+
+    }
+
+    
+
+    </script>
+</body>
+</html>
