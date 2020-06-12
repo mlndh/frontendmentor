@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='https://fonts.googleapis.com/css?family=Barlow Condensed' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
+
+  <title>Frontend Mentor | Project tracking intro component</title>
+  <style>
+body {
+  font-family: 'Barlow';
+  }
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12%;
+}
+.topnav {
+  display: none;
+}
+#main-img {
+  width: 100%;
+  padding-bottom: 12%;
+}
+a {
+text-decoration: none;
+font-family: 'Barlow Condensed';
+color: black;
+font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+.responsive {
+display: block;
+display: flex;
+flex-direction: column;
+position: fixed; 
+top: 20%;
+right: 10%;
+align-items: center;
+width: 50%; 
+height: 20%; 
+overflow: auto; 
+background-color: white;
+text-align: center;
+padding: 50px;
+}
+.responsive a {
+padding:3%;
+font-weight: bold;
+text-transform: uppercase;
+}
+#black-box-text {
+  font-family: 'Barlow';
+  background-color: black;
+  border-radius: 50%;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  margin-right: 2%;
+}
+.grey-larger-letter{
+  color: grey;
+  letter-spacing: 2px;
+}
+.margin { 
+  margin-left: 10%;
+}
+.color-white {
+  color: white;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+h1 {
+  letter-spacing: -2px;
+  margin: 0;
+  font-size: 55px;
+  font-weight: bold;
+}
+p{
+  color: black;
+}
+button{
+  background-color: rgb(216, 109, 67);
+  padding: 2%;
+  border-radius: 10%;
+}
+.same-row {
+  display: flex;
+}
+footer {
+  position: relative;
+  bottom: 2%;
+}
+@media screen and (min-width: 600px) {
+body {
+padding-left: 5%;
+padding-right: 5%;
+}
+#menubar {
+  display: none;
+ }
+.topnav {
+ display: block;
+ font-size: 1,5em;
+
+}
+body {
+  margin: 5%;
+}
+.content {
+  display: flex;
+}
+aside {
+  order: 2;
+  flex: 1;
+}
+main {
+  order: 1;
+  flex: 2;
+}
+a {
+  font-size: 120%;
+  padding: 5%;
+}
+.toppnav2 {
+  width: 500px;
+}
+}
+  </style>
+</head>
+<body>
+<header>
+<img src="images/logo.svg" id="logo" alt="Img">
+   <div class="toppnav2"> 
+<div class="topnav" id="myTopnav">
+  <a href="#">Product</a>
+  <a href="#">Features</a>
+  <a href="#">Pricing</a>
+  <a href="#">Login</a>
+</div></div>
+<img src="images/icon-hamburger.svg" id="menubar" alt="Menu bar" onclick="responsiveMenu()">
+</header>
+<div class="content"> 
+<aside>
+<img src="images/illustration-devices.svg" id="main-img" alt="Phone and desktop imgage">
+</aside>
+<main>
+  <div class="same-row margin">
+  <p id="black-box-text" class="color-white">New </p> 
+  <p class="grey-larger-letter uppercase">  Monograph Dashboard</p>
+</div>
+  <h1 class="margin uppercase">Powerful insights into your team</h1>
+  <p class="margin"> Project planning and time tracking for agile teams</p>
+<div class="same-row margin"> 
+  <button class="color-white uppercase"> Schedule a demo</button>
+   <p class="grey-larger-letter uppercase"> to see a live preview</p>
+  </div>
+</main>
+</div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> Coded by <a href="https://github.com/mlndh">Malin DH</a>.
+   
+    </p>
+  </footer>
+  <script>
+    function responsiveMenu() {
+      let links = document.getElementById("myTopnav");
+      if (links.className === "topnav") {
+    links.className += " responsive";
+
+  } else {
+    links.className = "topnav";
+  }
+
+    }
+    window.onclick = function(event) {
+      let box = document.getElementsByClassName(" responsive");
+  if (event.target == box) {
+    box.className = "topnav";
+  }
+    }
+  </script>
+</body>
+</html>
